@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>iBOY Skin Lab: seven Video.js v10 skins</title>
+    <meta
+      name="description"
+      content="Seven Video.js v10 skins from iBOY, each a different world: pin art, riso print, cartoon, ledger, origami, terminal and machine vision. Pause the film and the frame is rebuilt in the skin's own material."
+    />
+    <meta name="theme-color" content="#14130f" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800&family=Space+Mono:wght@400;700&family=Lilita+One&family=Nunito:wght@700;800&family=Fraunces:wght@500;600&family=JetBrains+Mono:wght@400;700&family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <a class="skip" href="#player">Skip to the player</a>
+
+    <header class="bar">
+      <a class="brand" href="#top" aria-label="iBOY Skin Lab, back to top">iBOY SKIN LAB</a>
+      <nav aria-label="Sections">
+        <a href="#player">Try it</a>
+        <a href="#sizes">Sizes</a>
+        <a href="#access">Access</a>
+        <a href="#use">Use it</a>
+      </nav>
+    </header>
+
+    <main class="page" id="top">
+      <header class="head">
+        <p class="label">VIDEO.JS V10 SKINS FROM IBOY</p>
+        <h1>Seven skins.<br />Seven worlds.</h1>
+        <p class="lede">
+          Every skin rebuilds the paused frame in its own material and draws the seek bar from the sound you have heard.
+          Pause the film to see it. Pick a skin below.
+        </p>
+      </header>
+
+      <section class="lab" aria-label="Skin lab">
+        <div id="skins" class="skin-tabs" role="tablist" aria-label="Skins"></div>
+
+        <div id="backdrop" class="backdrop">
+          <div id="player" class="stage-player"></div>
+        </div>
+
+        <div class="picks">
+          <fieldset>
+            <legend class="label">FOOTAGE</legend>
+            <div id="footage-picks" class="chips"></div>
+          </fieldset>
+        </div>
+
+        <article id="notes" class="skin-notes" aria-live="polite"></article>
+      </section>
+
+      <section class="sizes" id="sizes" aria-label="Player sizes">
+        <p class="label">SIZES</p>
+        <h2>Every skin, every width</h2>
+        <p class="sub">
+          The controls follow the width of the player itself, not the window. Narrow players drop the title and the cast
+          and picture-in-picture buttons, hand the centre cluster over to the panel, and keep every button thumb sized.
+          These two follow the skin you pick above.
+        </p>
+        <div class="size-row">
+          <figure>
+            <div id="size-tablet" class="size-player" style="--w: 440px"></div>
+            <figcaption>440 PX</figcaption>
+          </figure>
+          <figure>
+            <div id="size-phone" class="size-player" style="--w: 300px"></div>
+            <figcaption>300 PX</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="access" id="access" aria-label="Accessibility">
+        <p class="label">ACCESS</p>
+        <h2>Made for everyone</h2>
+        <ul class="facts">
+          <li>
+            <h3>Readable over any footage</h3>
+            <p>Controls sit on a solid panel in every skin, never on the picture.</p>
+          </li>
+          <li>
+            <h3>Keyboard first</h3>
+            <p>Every control is reachable in visual order, with a thick focus ring that always shows.</p>
+          </li>
+          <li>
+            <h3>Thumb sized</h3>
+            <p>Buttons are 44 px on touch screens and never smaller than 40 px elsewhere.</p>
+          </li>
+          <li>
+            <h3>Calm on request</h3>
+            <p>
+              With reduced motion on, the frame effects appear finished without a transition, bouncing and hopping stop,
+              and the seek bar redraws only a few times a second.
+            </p>
+          </li>
+          <li>
+            <h3>Forced colours and contrast</h3>
+            <p>High contrast and forced colours modes swap every material for solid system colours.</p>
+          </li>
+          <li>
+            <h3>Never blocks playback</h3>
+            <p>
+              The seek bar reads a copy of the audio and never routes it. If a browser or file cannot provide one, an even
+              bar is drawn instead.
+            </p>
+          </li>
+        </ul>
+
+        <p class="label keys-label">KEYBOARD</p>
+        <ul class="keys">
+          <li><kbd>Space</kbd> or <kbd>K</kbd> play and pause</li>
+          <li><kbd>J</kbd> <kbd>L</kbd> or <kbd>←</kbd> <kbd>→</kbd> seek</li>
+          <li><kbd>↑</kbd> <kbd>↓</kbd> volume</li>
+          <li><kbd>M</kbd> mute</li>
+          <li><kbd>F</kbd> fullscreen</li>
+          <li><kbd>C</kbd> captions</li>
+          <li><kbd>I</kbd> picture in picture</li>
+          <li><kbd>0</kbd> to <kbd>9</kbd> jump to a point</li>
+        </ul>
+      </section>
+
+      <section class="use" id="use" aria-label="Use the skins">
+        <p class="label">USE THEM</p>
+        <h2>Open source, Apache 2.0</h2>
+        <p class="sub">
+          One small engine draws the frame and the seek bar. Each skin is a stylesheet of tokens plus a short renderer, so
+          a new skin is a few hundred lines. Switch skins with <code>data-skin</code> on the player container.
+        </p>
+        <dl class="props">
+          <dt><code>data-skin</code></dt>
+          <dd>pinart, riso, cel, ledger, origami, tui or cortex</dd>
+          <dt><code>--media-accent-color</code></dt>
+          <dd>accent colour of the skin in use</dd>
+          <dt><code>--media-border-radius</code></dt>
+          <dd>player corners</dd>
+          <dt><code>--media-font-family</code></dt>
+          <dd>interface font</dd>
+        </dl>
+      </section>
+
+      <footer class="foot">
+        <p>Built by iBOY Innovation Hub for the Video.js Skins Design Challenge.</p>
+        <p><a href="https://www.iboyhub.com">www.iboyhub.com</a></p>
+        <p class="credit">
+          Footage: the Mux sample film for the first example, and iBOY's own clips for the others. Fonts: Archivo, Space
+          Mono, Lilita One, Nunito, Fraunces, JetBrains Mono and Poppins, SIL Open Font License.
+        </p>
+      </footer>
+    </main>
+    <script type="module" src="/src/showcase/main.ts"></script>
+  </body>
+</html>

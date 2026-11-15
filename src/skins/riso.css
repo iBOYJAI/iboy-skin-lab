@@ -1,0 +1,142 @@
+/* RISO: flat, bold, two inks on cream, a hard offset shadow under everything, like a poster pulled off a press. */
+@layer components {
+  .media-skin[data-theme="scaffold"][data-preset="video"][data-skin="riso"] {
+    --k-bg: #f3eedd;
+    --k-paper: #f3eedd;
+    --k-ink: #1a1a2e;
+    --k-c1: #ff48b0;
+    --k-c2: #0078bf;
+    --k-c3: #ffe800;
+    --k-r: 6px;
+    --k-font: Archivo, "Arial Black", ui-sans-serif, system-ui, sans-serif;
+    --k-mono: "Space Mono", ui-monospace, monospace;
+    --k-accent: #ff48b0;
+    --k-accent-ink: #1a1a2e;
+    --k-ring: #0078bf;
+    --k-panel: #f3eedd;
+    --k-panel-fg: #1a1a2e;
+    --k-panel-r: 0;
+    --k-panel-border: 3px solid #1a1a2e;
+    --k-panel-shadow: 7px 7px 0 #0078bf;
+    --k-panel-pad: 16px 18px 12px;
+
+    --k-btn: #f3eedd;
+    --k-btn-fg: #1a1a2e;
+    --k-btn-r: 0;
+    --k-btn-border: 3px solid #1a1a2e;
+    --k-btn-shadow: 3px 3px 0 #ff48b0;
+    --k-btn-hover: #ffe800;
+    --k-btn-hover-fg: #1a1a2e;
+    --k-icon: 22px;
+
+    --k-play: #ff48b0;
+    --k-play-fg: #1a1a2e;
+    --k-play-r: 50%;
+    --k-play-border: 4px solid #1a1a2e;
+    --k-play-shadow: 7px 7px 0 #0078bf;
+    --k-play-size: 96px;
+
+    --k-pop: #f3eedd;
+    --k-pop-fg: #1a1a2e;
+    --k-pop-r: 0;
+    --k-pop-border: 3px solid #1a1a2e;
+    --k-pop-shadow: 5px 5px 0 #ff48b0;
+
+    --k-time-bg: #ffe800;
+    --k-time-fg: #1a1a2e;
+    --k-time-r: 0;
+    --k-time-border: 3px solid #1a1a2e;
+    --k-time-font: var(--k-mono);
+    --k-time-size: 14px;
+    --k-time-weight: 700;
+
+    --k-title-bg: #0078bf;
+    --k-title-fg: #f3eedd;
+    --k-title-r: 0;
+    --k-title-border: 3px solid #1a1a2e;
+    --k-title-font: var(--k-font);
+    --k-title-ls: 0.1em;
+
+    --k-rail-h: 34px;
+    --k-buffer: rgb(26 26 46 / 0.35);
+    --k-thumb-w: 10px;
+    --k-thumb-h: 38px;
+    --k-thumb: #1a1a2e;
+    --k-thumb-r: 0;
+    --k-thumb-shadow: 3px 3px 0 #ff48b0;
+
+    font-family: var(--k-font);
+
+    /* A press, not a tap: keys slide into their shadow. */
+    & .media-button:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 5px 5px 0 #ff48b0;
+    }
+
+    & .media-button:active {
+      transform: translate(3px, 3px);
+      box-shadow: 0 0 0 #ff48b0;
+    }
+
+    & .video-controls-center-play:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 9px 9px 0 #0078bf;
+    }
+
+    & .video-controls-center-play:active {
+      transform: translate(5px, 5px);
+      box-shadow: 1px 1px 0 #0078bf;
+    }
+
+    /* Sticker title, tipped a little off square. */
+    & .media-title {
+      rotate: -1.5deg;
+      box-shadow: 4px 4px 0 #ff48b0;
+      font-weight: 800;
+    }
+
+    & .media-time-group {
+      box-shadow: 3px 3px 0 #0078bf;
+    }
+
+    & .media-time-duration-value,
+    & .media-time-separator {
+      opacity: 0.7;
+    }
+
+    & .media-time-slider-thumb {
+      box-shadow: 3px 3px 0 #ff48b0;
+    }
+
+    & .media-volume-slider-track {
+      border-radius: 0;
+      background: #1a1a2e;
+    }
+
+    & .media-volume-slider-thumb {
+      border-radius: 0;
+      background: #ff48b0;
+      border: 3px solid #1a1a2e;
+    }
+
+    & .media-menu-item[data-highlighted],
+    & .media-menu-back-item[data-highlighted],
+    & .media-menu-radio-item[data-highlighted] {
+      background: #ffe800;
+    }
+
+    & .media-menu-radio-icon {
+      color: #0078bf;
+    }
+
+    & .media-dialog-close {
+      border: 3px solid #1a1a2e !important;
+      color: #1a1a2e;
+      background: #ffe800;
+    }
+
+    & .media-buffering-indicator-spinner-icon {
+      color: #ff48b0;
+    }
+  }
+}

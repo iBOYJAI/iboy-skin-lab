@@ -1,0 +1,201 @@
+/* CEL: a Saturday-morning cartoon. Thick ink, flat bright colour, buttons that squash and bounce, speech-bubble tags. */
+@layer components {
+  .media-skin[data-theme="scaffold"][data-preset="video"][data-skin="cel"] {
+    --k-bg: #8fd8ff;
+    --k-paper: #8fd8ff;
+    --k-c1: #ff5d5d;
+    --k-c2: #ffd23f;
+    --k-c3: #7bd88f;
+    --k-r: 26px;
+    --k-font: Nunito, "Trebuchet MS", ui-rounded, system-ui, sans-serif;
+    --k-mono: "Lilita One", Nunito, ui-rounded, system-ui, sans-serif;
+    --k-accent: #ff5d5d;
+    --k-accent-ink: #1b1b24;
+    --k-ring: #1b1b24;
+    --k-panel: #fffaf0;
+    --k-panel-fg: #1b1b24;
+    --k-panel-r: 26px;
+    --k-panel-border: 4px solid #1b1b24;
+    --k-panel-shadow: 0 7px 0 #1b1b24;
+    --k-panel-pad: 16px 18px 12px;
+
+    --k-btn: #ffd23f;
+    --k-btn-fg: #1b1b24;
+    --k-btn-r: 50%;
+    --k-btn-border: 3.5px solid #1b1b24;
+    --k-btn-shadow: 0 4px 0 #1b1b24;
+    --k-btn-hover: #ffe27a;
+    --k-btn-hover-fg: #1b1b24;
+    --k-icon: 24px;
+
+    --k-play: #ff5d5d;
+    --k-play-fg: #fffaf0;
+    --k-play-r: 50%;
+    --k-play-border: 5px solid #1b1b24;
+    --k-play-shadow: 0 8px 0 #1b1b24;
+    --k-play-size: 100px;
+    --k-play-icon: 44px;
+
+    --k-pop: #fffaf0;
+    --k-pop-fg: #1b1b24;
+    --k-pop-r: 18px;
+    --k-pop-border: 3.5px solid #1b1b24;
+    --k-pop-shadow: 0 5px 0 #1b1b24;
+
+    --k-time-bg: #fff;
+    --k-time-fg: #1b1b24;
+    --k-time-r: 999px;
+    --k-time-border: 3.5px solid #1b1b24;
+    --k-time-font: var(--k-mono);
+    --k-time-size: 16px;
+    --k-time-weight: 400;
+
+    --k-title-bg: #7bd88f;
+    --k-title-fg: #1b1b24;
+    --k-title-r: 14px;
+    --k-title-border: 3.5px solid #1b1b24;
+    --k-title-font: var(--k-mono);
+    --k-title-size: 15px;
+    --k-title-tt: none;
+    --k-title-ls: 0.02em;
+
+    --k-rail-h: 44px;
+    --k-buffer: rgb(27 27 36 / 0.25);
+    --k-thumb-w: 50px;
+    --k-thumb-h: 50px;
+    --k-thumb: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'%3E%3Cellipse cx='25' cy='44' rx='13' ry='3' fill='%231b1b24' opacity='.25'/%3E%3Cpath d='M8 34c0-14 7-24 17-24s17 10 17 24c0 6-6 9-17 9S8 40 8 34z' fill='%237bd88f' stroke='%231b1b24' stroke-width='3.2' stroke-linejoin='round'/%3E%3Ccircle cx='19' cy='26' r='6' fill='%23fff' stroke='%231b1b24' stroke-width='2.4'/%3E%3Ccircle cx='32' cy='26' r='6' fill='%23fff' stroke='%231b1b24' stroke-width='2.4'/%3E%3Ccircle cx='20.5' cy='27' r='2.6' fill='%231b1b24'/%3E%3Ccircle cx='33.5' cy='27' r='2.6' fill='%231b1b24'/%3E%3Cpath d='M20 36q5 5 10 0' fill='none' stroke='%231b1b24' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M14 14q-2-7 3-9M36 14q2-7-3-9' fill='none' stroke='%231b1b24' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+    --k-thumb-r: 0;
+    --k-thumb-shadow: none;
+
+    font-weight: 700;
+
+    /* Squash and stretch: buttons overshoot on hover and flatten when pressed. */
+    & .media-button {
+      transition:
+        transform 0.45s cubic-bezier(0.34, 1.7, 0.64, 1),
+        box-shadow 0.45s cubic-bezier(0.34, 1.7, 0.64, 1),
+        background 0.2s;
+    }
+
+    & .media-button:hover {
+      transform: scale(1.14) rotate(-5deg);
+      box-shadow: 0 6px 0 #1b1b24;
+    }
+
+    & .media-button:active {
+      transform: scale(1.1, 0.82) translateY(3px);
+      box-shadow: 0 1px 0 #1b1b24;
+    }
+
+    & .video-controls-center-play:hover {
+      transform: scale(1.1) rotate(4deg);
+      box-shadow: 0 10px 0 #1b1b24;
+    }
+
+    & .video-controls-center-play:active {
+      transform: scale(1.08, 0.86) translateY(6px);
+      box-shadow: 0 2px 0 #1b1b24;
+    }
+
+    /* While it waits, the big button bobs. */
+    @media (prefers-reduced-motion: no-preference) {
+      & .video-controls-center-play[data-paused],
+      & .video-controls-center-play:not([data-started]) {
+        animation: cel-bob 1.1s ease-in-out infinite;
+      }
+    }
+
+    & .media-play-button svg path {
+      fill: currentColor;
+    }
+
+    & .media-title {
+      rotate: -2deg;
+      box-shadow: 0 4px 0 #1b1b24;
+    }
+
+    & .media-time-group {
+      box-shadow: 0 4px 0 #1b1b24;
+    }
+
+    & .media-time-slider-thumb {
+      top: 38%;
+      transform: translate(-50%, -50%);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      /* The mascot hops while the film plays. */
+      &:has(media-play-button[data-started]:not([data-paused]):not([data-ended])) .media-time-slider-thumb {
+        animation: cel-hop 0.55s ease-in-out infinite;
+      }
+    }
+
+    /* Tooltips and the scrub tag are speech bubbles with a tail. */
+    & .media-tooltip-popup,
+    & .media-time-slider-preview-meta {
+      position: relative;
+      font-weight: 800;
+    }
+
+    & .media-tooltip-popup::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -9px;
+      width: 12px;
+      height: 12px;
+      translate: -50% 0;
+      rotate: 45deg;
+      background: #fffaf0;
+      border-right: 3.5px solid #1b1b24;
+      border-bottom: 3.5px solid #1b1b24;
+    }
+
+    & .media-volume-slider-track {
+      background: #1b1b24;
+      border-radius: 4px;
+      width: 8px;
+    }
+
+    & .media-volume-slider-fill {
+      background: #ff5d5d;
+    }
+
+    & .media-volume-slider-thumb {
+      background: #ffd23f;
+      border: 3px solid #1b1b24;
+    }
+
+    & .media-menu-item[data-highlighted],
+    & .media-menu-back-item[data-highlighted],
+    & .media-menu-radio-item[data-highlighted] {
+      background: #ffd23f;
+    }
+
+    & .media-menu-radio-icon {
+      color: #ff5d5d;
+    }
+  }
+
+  @keyframes cel-bob {
+    0%,
+    100% {
+      translate: 0 0;
+    }
+    50% {
+      translate: 0 -8px;
+    }
+  }
+
+  @keyframes cel-hop {
+    0%,
+    100% {
+      rotate: -6deg;
+      translate: 0 0;
+    }
+    50% {
+      rotate: 6deg;
+      translate: 0 -7px;
+    }
+  }
+}

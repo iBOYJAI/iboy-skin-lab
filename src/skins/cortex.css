@@ -1,0 +1,150 @@
+/* CORTEX: a precise instrument. Pale lab white, hairlines, one signal orange, small mono labels, round controls. */
+@layer components {
+  .media-skin[data-theme="scaffold"][data-preset="video"][data-skin="cortex"] {
+    --k-bg: #0d0f11;
+    --k-paper: #0d0f11;
+    --k-r: 16px;
+    --k-font: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    --k-mono: var(--k-font);
+    --k-fg: #14171a;
+    --k-accent: #ff4f1f;
+    --k-accent-ink: #ffffff;
+    --k-ring: #14171a;
+    --k-panel: #f4f5f3;
+    --k-panel-fg: #14171a;
+    --k-panel-r: 14px;
+    --k-panel-border: 1px solid #14171a;
+    --k-panel-shadow: 0 12px 30px rgb(0 0 0 / 0.35);
+    --k-panel-pad: 14px 18px 10px;
+
+    --k-btn: #ffffff;
+    --k-btn-fg: #14171a;
+    --k-btn-r: 50%;
+    --k-btn-border: 1px solid #14171a;
+    --k-btn-shadow: none;
+    --k-btn-hover: #14171a;
+    --k-btn-hover-fg: #f4f5f3;
+    --k-icon: 20px;
+
+    --k-play: #ff4f1f;
+    --k-play-fg: #ffffff;
+    --k-play-r: 50%;
+    --k-play-border: 1px solid #14171a;
+    --k-play-shadow: 0 0 0 8px rgb(244 245 243 / 0.18);
+    --k-play-size: 84px;
+
+    --k-pop: #f4f5f3;
+    --k-pop-fg: #14171a;
+    --k-pop-r: 10px;
+    --k-pop-border: 1px solid #14171a;
+    --k-pop-shadow: 0 10px 24px rgb(0 0 0 / 0.3);
+
+    --k-time-bg: transparent;
+    --k-time-fg: #14171a;
+    --k-time-r: 0;
+    --k-time-border: 0 solid transparent;
+    --k-time-font: var(--k-font);
+    --k-time-size: 13px;
+    --k-time-weight: 400;
+
+    --k-title-bg: #f4f5f3;
+    --k-title-fg: #14171a;
+    --k-title-r: 999px;
+    --k-title-border: 1px solid #14171a;
+    --k-title-font: var(--k-font);
+    --k-title-size: 11px;
+    --k-title-ls: 0.1em;
+
+    --k-rail-h: 34px;
+    --k-buffer: rgb(20 23 26 / 0.25);
+    --k-thumb-w: 2px;
+    --k-thumb-h: 40px;
+    --k-thumb: #ff4f1f;
+    --k-thumb-r: 0;
+    --k-thumb-shadow: none;
+
+    font-family: var(--k-font);
+
+    /* Hairline detailing: a small label rule above the rail. */
+    & .video-controls-bottom::before {
+      content: "TIMELINE  LOUDNESS HEARD";
+      position: absolute;
+      top: 3px;
+      left: 18px;
+      font-size: 9px;
+      letter-spacing: 0.16em;
+      color: rgb(20 23 26 / 0.55);
+      pointer-events: none;
+    }
+
+    & .video-controls-bottom {
+      padding-top: 20px;
+    }
+
+    & .media-button:hover {
+      transform: scale(1.06);
+    }
+
+    & .video-controls-center-play:hover {
+      transform: scale(1.04);
+    }
+
+    & .video-controls-start .media-play-button {
+      background: #ff4f1f;
+      color: #ffffff;
+    }
+
+    & .video-controls-top .media-button {
+      background: #f4f5f3;
+    }
+
+    & .media-time-group {
+      letter-spacing: 0.05em;
+    }
+
+    & .media-time-slider-thumb::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 9px;
+      height: 9px;
+      translate: -50% -50%;
+      border: 2px solid #ff4f1f;
+      border-radius: 50%;
+      background: #f4f5f3;
+    }
+
+    & .media-volume-slider-track {
+      width: 3px;
+      background: rgb(20 23 26 / 0.25);
+    }
+
+    & .media-volume-slider-fill {
+      background: #14171a;
+    }
+
+    & .media-volume-slider-thumb {
+      width: 12px;
+      height: 12px;
+      background: #ff4f1f;
+    }
+
+    & .media-menu-item[data-highlighted],
+    & .media-menu-back-item[data-highlighted],
+    & .media-menu-radio-item[data-highlighted] {
+      background: #14171a;
+      color: #f4f5f3;
+    }
+
+    & .media-menu-item[data-highlighted] .media-menu-radio-icon,
+    & .media-menu-radio-item[data-highlighted] .media-menu-radio-icon {
+      color: #ff4f1f;
+    }
+
+    & .media-dialog-close {
+      border: 1px solid #14171a !important;
+      color: #14171a;
+    }
+  }
+}

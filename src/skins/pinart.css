@@ -1,0 +1,98 @@
+/* PIN ART: a machined steel console. Keys stand on real depth, the panel is a slab with a thick edge. */
+@layer components {
+  .media-skin[data-theme="scaffold"][data-preset="video"][data-skin="pinart"] {
+    --k-bg: #0e0f12;
+    --k-paper: #15171b;
+    --k-r: 18px;
+    --k-accent: #ff6a2b;
+    --k-accent-ink: #1c0900;
+    --k-ring: #ffb48a;
+    --k-panel: linear-gradient(180deg, #4a4e57 0%, #2b2e35 14%, #23262c 100%);
+    --k-panel-fg: #eceef2;
+    --k-panel-r: 14px;
+    --k-panel-border: 1px solid #686d79;
+    --k-panel-shadow: 0 7px 0 #121317, 0 7px 0 1px #3a3d45, 0 22px 26px rgb(0 0 0 / 0.6);
+    --k-panel-pad: 16px 18px 12px;
+
+    --k-btn: linear-gradient(180deg, #666b77, #3d4048);
+    --k-btn-fg: #f4f5f8;
+    --k-btn-r: 10px;
+    --k-btn-border: 1px solid #848a97;
+    --k-btn-shadow: 0 4px 0 #15161a, 0 6px 8px rgb(0 0 0 / 0.55), inset 0 1px 0 rgb(255 255 255 / 0.35);
+    --k-btn-hover: linear-gradient(180deg, #7a808d, #484c55);
+    --k-btn-hover-fg: #ffd9c4;
+    --k-icon: 22px;
+
+    --k-play: linear-gradient(180deg, #ff9a64, #ff6a2b 55%, #c8480f);
+    --k-play-fg: #1c0900;
+    --k-play-r: 22px;
+    --k-play-border: 1px solid #ffc9a8;
+    --k-play-shadow: 0 8px 0 #7a2c08, 0 10px 12px rgb(0 0 0 / 0.55), inset 0 2px 0 rgb(255 255 255 / 0.5);
+    --k-play-size: 92px;
+
+    --k-pop: linear-gradient(180deg, #3c4048, #272a30);
+    --k-pop-fg: #eceef2;
+    --k-pop-r: 10px;
+    --k-pop-border: 1px solid #70757f;
+    --k-pop-shadow: 0 5px 0 #121317, 0 14px 22px rgb(0 0 0 / 0.55);
+
+    --k-time-bg: #0d0e11;
+    --k-time-fg: #ffb48a;
+    --k-time-r: 6px;
+    --k-time-border: 1px solid #000;
+    --k-time-size: 14px;
+    --k-time-weight: 700;
+
+    --k-title-bg: linear-gradient(180deg, #4a4e57, #2b2e35);
+    --k-title-border: 1px solid #686d79;
+    --k-title-r: 8px;
+
+    --k-rail-h: 40px;
+    --k-buffer: rgb(255 255 255 / 0.18);
+    --k-thumb-w: 22px;
+    --k-thumb-h: 22px;
+    --k-thumb: radial-gradient(circle at 34% 28%, #fff1e6, #ff6a2b 52%, #7a2c08);
+    --k-thumb-shadow: 0 3px 4px rgb(0 0 0 / 0.6), inset 0 -2px 3px rgb(80 20 0 / 0.5);
+
+    /* The panel is a slab leaning back toward the viewer. */
+    & .video-controls-bottom {
+      transform: perspective(900px) rotateX(5deg);
+      transform-origin: 50% 100%;
+    }
+
+    /* Keys sink when pressed, and their shadow shortens with them. */
+    & .media-button:active {
+      transform: translateY(3px);
+      box-shadow: 0 1px 0 #15161a, 0 2px 3px rgb(0 0 0 / 0.55), inset 0 1px 0 rgb(255 255 255 / 0.25);
+    }
+
+    & .video-controls-center-play:active {
+      transform: translateY(6px);
+      box-shadow: 0 2px 0 #7a2c08, 0 4px 6px rgb(0 0 0 / 0.55), inset 0 2px 0 rgb(255 255 255 / 0.5);
+    }
+
+    & .video-controls-top .media-button {
+      background: var(--k-btn);
+    }
+
+    /* The thumb is a ball on a post: it rides above the rail with its own shadow. */
+    & .media-time-slider-thumb {
+      top: 45%;
+    }
+
+    & .media-volume-slider-track {
+      background: #0d0e11;
+      box-shadow: inset 0 1px 3px #000;
+    }
+
+    & .media-volume-slider-thumb {
+      background: radial-gradient(circle at 34% 28%, #fff1e6, #ff6a2b 52%, #7a2c08);
+    }
+
+    & .media-menu-item[data-highlighted],
+    & .media-menu-back-item[data-highlighted],
+    & .media-menu-radio-item[data-highlighted] {
+      background: linear-gradient(180deg, #555a64, #3a3d45);
+    }
+  }
+}
